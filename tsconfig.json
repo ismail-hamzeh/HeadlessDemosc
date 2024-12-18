@@ -32,6 +32,6 @@
     "incremental": true,
     "forceConsistentCasingInFileNames": false
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "scripts/custom.js", "public/js/custom.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "scripts/custom.js", "public/js/custom.js", "src/components/LaunchpadTestBtnBehavior.tsx"],
   "exclude": ["node_modules"]
 }

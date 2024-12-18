@@ -29,10 +29,7 @@ const Testimonial = (props: SitecorePageProps) => {
                     <div className="col-lg-7 col-md-9 mx-auto">
                       <div className="client_container ">
                         <div className="img-box">
-                          <img
-                            src={child.Image.jsonValue.value.src}
-                            alt={child.Image.jsonValue.value.alt}
-                          ></img>
+                          <Image field={child.Image.jsonValue}></Image>
                         </div>
                         <div className="detail-box">
                           <Text tag="h5" field={child.Name as Field<string>}></Text>

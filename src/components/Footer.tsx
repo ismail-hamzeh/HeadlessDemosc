@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
+import { Link, Text, Field } from '@sitecore-jss/sitecore-jss-nextjs';
 
-const Footer = () => {
+const Footer = ({fields}) => {
   useEffect(() => {
-    // to get current year
     const currentDate = new Date();
     const currentYear = currentDate.getFullYear();
     const displayYear = document.querySelector("#displayYear");
@@ -14,8 +14,8 @@ const Footer = () => {
   return (
     <div className="container">
       <p>
-        &copy; <span id="displayYear"></span> All Rights Reserved By 
-        <a href="https://html.design/"> Free Html Templates</a>
+        &copy; <span id="displayYear"></span><Text field={fields.FooterText as Field<string>}></Text>
+        <b><Link className='CompanyName' field={fields.CompanyName}></Link></b>
       </p>
     </div>
   );

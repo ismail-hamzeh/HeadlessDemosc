@@ -1,9 +1,6 @@
 import { Text, Image, Field } from '@sitecore-jss/sitecore-jss-nextjs';
-import { GetStaticProps } from 'next';
-import { SitecorePageProps } from 'lib/page-props';
 
-const ContactUs = (props: SitecorePageProps) => {
-  const fields = props.fields;
+const ContactUs = ({fields}) => {
 
   return (
     <section className="contact_section ">
@@ -61,15 +58,5 @@ const ContactUs = (props: SitecorePageProps) => {
     </section>
   );
 };
-
-
-export const getStaticProps: GetStaticProps = async (props) => {
-  return {
-    props: {
-      fields: props.fields
-    },
-  };
-};
-
 
 export default ContactUs;

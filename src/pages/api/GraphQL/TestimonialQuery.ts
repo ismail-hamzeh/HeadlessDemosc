@@ -1,8 +1,10 @@
+import { TestimonialDataPath, TestimonialItemTemplateID } from './Constants';
+
 export const TestimonialQuery = 
 `
  query Testimonial {
   parent: item(
-    path: "/sitecore/content/HeadlessSites/HeadlessDemosc/Data/Testimonial"
+    path: "${TestimonialDataPath}"
     language: "en" 
   ) {
     Heading: field(name: "Heading") {
@@ -12,8 +14,8 @@ export const TestimonialQuery =
   children: search(
     where: {
       AND: [
-        { name: "_path", value: "F966BFE3-29EA-4915-86DE-21DB69FD1E47", operator: CONTAINS }
-        { name: "_templates", value: "A26C8E93-2345-4F57-A3E4-906A5156DDD9", operator: EQ }
+        { name: "_path", value: "${TestimonialDataPath}", operator: CONTAINS }
+        { name: "_templates", value: "${TestimonialItemTemplateID}", operator: EQ }
       ]
     }
   ) {

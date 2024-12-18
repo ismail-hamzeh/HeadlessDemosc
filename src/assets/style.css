@@ -1007,3 +1007,7 @@ a:focus {
   color: inherit;
 }
 /*# sourceMappingURL=style.css.map */
+.CompanyName{
+  margin-inline: 5px;
+  font-size: 16px;
+}

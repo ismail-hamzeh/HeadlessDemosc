@@ -1,9 +1,6 @@
 import { Link } from '@sitecore-jss/sitecore-jss-nextjs';
-import { GetStaticProps } from 'next';
-import { SitecorePageProps } from 'lib/page-props';
 
-const HeaderTop = (props: SitecorePageProps) =>{
-  const fields = props.fields;
+const HeaderTop = ({fields}) =>{
   return (
     <div className="header_top">
       <div className="container-fluid header_top_container">
@@ -38,14 +35,6 @@ const HeaderTop = (props: SitecorePageProps) =>{
       </div>
     </div>
   );
-};
-
-export const getStaticProps: GetStaticProps = async (props) => {
-  return {
-    props: {
-      fields: props.fields
-    },
-  };
 };
 
 export default HeaderTop;

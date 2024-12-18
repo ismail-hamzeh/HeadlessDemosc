@@ -1,9 +1,6 @@
 import { Text, Field, Link, LinkFieldValue, Image } from '@sitecore-jss/sitecore-jss-nextjs';
-import { GetStaticProps } from 'next';
-import { SitecorePageProps } from 'lib/page-props';
 
-const About = (props: SitecorePageProps) =>{
-  const fields = props.fields;
+const About = ({fields}) =>{
     return(
         <section className="about_section layout_padding">
         <div className="container-fluid">
@@ -27,13 +24,5 @@ const About = (props: SitecorePageProps) =>{
       </section>
     )
 }
-
-export const getStaticProps: GetStaticProps = async (props) => {
-  return {
-    props: {
-      fields: props.fields
-    },
-  };
-};
 
 export default About;

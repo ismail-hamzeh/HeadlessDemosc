@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import Head from 'next/head';
-import { Placeholder, LayoutServiceData, Field, HTMLLink } from '@sitecore-jss/sitecore-jss-nextjs';
+import { Placeholder, LayoutServiceData, Field, HTMLLink, Image } from '@sitecore-jss/sitecore-jss-nextjs';
 import config from 'temp/config';
 import Scripts from 'src/Scripts';
 
@@ -42,7 +42,7 @@ const Layout = ({ layoutData, headLinks }: LayoutProps): JSX.Element => {
       <div className={mainClassPageEditing + " sub_page"}>
         <div className="hero_area">
           <div className="hero_bg_box">
-            <img src="images/hero-bg.jpg" alt=""></img>
+          <Image field={fields.HeroImage}></Image>
           </div>
           <header className="header_section">
               {route && <Placeholder name="headless-header" rendering={route} />}

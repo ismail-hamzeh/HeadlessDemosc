@@ -6,7 +6,7 @@ import { OurTeamQuery } from 'src/pages/api/GraphQL/OurTeamQuery';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { Text, Field } from '@sitecore-jss/sitecore-jss-nextjs';
+import { Text, Field, Image } from '@sitecore-jss/sitecore-jss-nextjs';
 
 const OurTeam = (props: SitecorePageProps) => {
   const result = props.props.result;
@@ -50,7 +50,7 @@ const OurTeam = (props: SitecorePageProps) => {
                   <div key={index} className="col-md-4 col-sm-6 mx-5">
                     <div className="box mx-3">
                       <div className="img-box">
-                        <img src={child.Image.jsonValue.value.src} alt=""></img>
+                      <Image field={child.Image.jsonValue}></Image>
                       </div>
                       <div className="detail-box">
                         <Text tag="h5" field={child.Name as Field<string>}></Text>

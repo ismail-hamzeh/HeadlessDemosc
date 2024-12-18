@@ -1,7 +1,9 @@
+import { OurTeamDataPath, OurTeamItemTemplateID } from './Constants';
+
 export const OurTeamQuery = `
    query OurTeam {
   parent: item(
-    path: "/sitecore/content/HeadlessSites/HeadlessDemosc/Data/OurTeam"
+    path: "${OurTeamDataPath}"
     language: "en" 
   ) {
     Heading: field(name: "Heading") {
@@ -14,8 +16,8 @@ export const OurTeamQuery = `
   children: search(
     where: {
       AND: [
-        { name: "_path", value: "697A8A54-1C11-4F2A-9237-9C3C7F66537B", operator: CONTAINS }
-        { name: "_templates", value: "6219C911-A5E5-4ADD-A007-330A34352540", operator: EQ }
+        { name: "_path", value: "${OurTeamDataPath}", operator: CONTAINS }
+        { name: "_templates", value: "${OurTeamItemTemplateID}", operator: EQ }
       ]
     }
   ) {

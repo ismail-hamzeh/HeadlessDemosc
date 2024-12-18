@@ -5,7 +5,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { FetchData } from 'src/pages/api/GraphQL/Services';
 import { OurServicesQuery } from 'src/pages/api/GraphQL/OurServicesQuery';
-import { Text, Field, Link, LinkFieldValue } from '@sitecore-jss/sitecore-jss-nextjs';
+import { Text, Field, Link, LinkFieldValue, Image } from '@sitecore-jss/sitecore-jss-nextjs';
 
 const OurServices = (props: SitecorePageProps) => {
   const result = props.props.result;
@@ -37,8 +37,8 @@ const OurServices = (props: SitecorePageProps) => {
     <section className="service_section layout_padding">
       <div className="container">
         <div className="heading_container heading_center ">
-          <Text tag="h2" field={result.parent.Title as Field<string>}></Text>
-          <Text tag="p" field={result.parent.Description as Field<string>}></Text>
+          <Text tag="h2" field={result.parent.Title.jsonValue as Field<string>}></Text>
+          <Text tag="p" field={result.parent.Description.jsonValue as Field<string>}></Text>
         </div>
         <div className="service_container">
           <div className="carousel-wrap ">
@@ -49,11 +49,11 @@ const OurServices = (props: SitecorePageProps) => {
                   <div key={index} className="item">
                     <div className="box ">
                       <div className="img-box">
-                        <img src={child.image.jsonValue.value.src} alt="" />
+                        <Image field={child.image.jsonValue}></Image>
                       </div>
                       <div className="detail-box">
-                        <Text tag="h5" field={child.title as Field<string>}></Text>
-                        <Text tag="p" field={child.description as Field<string>}></Text>
+                        <Text tag="h5" field={child.title.jsonValue as Field<string>}></Text>
+                        <Text tag="p" field={child.description.jsonValue as Field<string>}></Text>
                       </div>
                     </div>
                   </div>
